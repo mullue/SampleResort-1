@@ -1,0 +1,18 @@
+.helloInput {
+  width: 200px;
+}
+.subtitle {
+	font-size: 30px;
+	font-weight: bold;
+}
+.contents  {
+	font-size: 14px;
+}
+.contents-big  {
+	font-size: 18px;
+	font-weight: bold;
+}
+.contents-left  {
+	font-size: 14px;
+	text-align: left;
+}

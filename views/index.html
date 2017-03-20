@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insator Wise-IoT Demo</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="response" class="lead text-center">
+            <br>
+            <img src="logo.png"/>
+            <h1>Demo App using Insator IoT service on Bluemix</h1>
+            <br>
+            <!--table align=center><tr>
+                <td> <img src="wise-iot.png" width=600 /> </td>
+                <td> 
+                    <input type="button" value="Alart to the Rescue Teams!"><br><br>
+                    <table border=1 width=300>
+                        <tr><td>TeamA</td><td>...</td><td>...</td></tr>
+                        <tr><td>TeamB</td><td>...</td><td>...</td></tr>
+                    </table>
+                    <br><br>
+                    <Input type="button" value="Check the current status of snow!"><br><br>
+                    <table border=1 width=300>
+                        <tr><td>Site#1</td><td>...</td><td>...</td></tr>
+                        <tr><td>Site#2</td><td>...</td><td>...</td></tr>
+                    </table>
+                </td>
+            </tr></table-->
+        </div>
+        <!-- ************************* [0] Scenario introduction  ************************************* -->
+        <div id="tail" class="lead text-center">
+            <img src="wise-iot-logo.png"/><br>
+            Worldwide Interoperability for SEmantics IoT
+        </div>
+        <br><br>
+        <div>
+            <p id="subtitle_0" class="subtitle">▶ Wise-IoT ski resort IoT interworking project</p>
+            <br>
+            <table width=1200>
+            <tr>
+                <td><img src="wise-iot.png" width="800"/>
+                    <br>
+                    <br> 2 years project June16-May 18
+                    <br> 9 EU –9 KR partners
+                    <br>
+                </td>
+                <td align=left>
+                <div class="contents">
+                    <p class="contents-big">Context and motivation</p>
+                    <ul><li>Emergence of many “IoT platforms” adding to vertical silos, technology islands</li>
+                         <li>Interoperability & interworking among these technology islands required as well as tackling gaps & overlaps</li>
+                    </ul>
+                    <p class="contents-big">Objectives</p>
+                    <ul>
+                        <li> Global IoT standards interoperability</li>
+                        <li> Using interworking semantics</li>
+                        <li> Interworking between heterogeneous IoT platforms</li>
+                        <li> Trust and security</li>
+                    </ul>
+                    <p class="contents-big">Use Cases</p>
+                    <ul>
+                        <li> Conquer the slope (gamification)</li>
+                        <li> Energy Monitoring</li>
+                        <li> Incident rollback</li>
+                        <li> Rich parking</li>
+                        <li> Traffic management</li>
+                    </ul>
+                    <p class="contents-big">Consortium</p>
+                    <ul><li>Europe : EGM(Easy Global Market, FR), NEC(UK), TID(Telefonica, SP), CEA(Commissariat à l’énergie atomique, FR), UC(University of Cantabria, SP),
+                            UL(University of Liverpool, UK), TSP(Telecom Sud Paris, FR), Institure of applied sciences and arts (CH)</li>
+                        <li>Korea : Sejong University (SJU), KETI, Samsung SDS, KAIST, Kyungbook National University (KNU), etc.</li>
+                    </ul>
+                    <br><br>
+                </div>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <br><br><br>
+            <p id="subtitle_3" class="subtitle">▶ IoT standards interworking scenarios at ski resort</p>
+
+                                                <table class=MsoNormalTable style="WIDTH: 858px; BORDER-COLLAPSE: collapse; mso-yfti-tbllook: 1056; mso-padding-alt: 0cm 0cm 0cm 0cm" cellSpacing=0 cellPadding=0 width=858 border=0>
+                                                    <tbody>
+                                                        <tr style="HEIGHT: 2.7pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+                                                            <td style="BORDER-TOP: rgb(8,172,212) 1pt solid; HEIGHT: 2.7pt; BORDER-RIGHT: windowtext; WIDTH: 91px; BACKGROUND: rgb(8,172,212); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; border-image: none" width=91>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: center; MARGIN: 0cm 0cm 8pt' align=center><b><span lang=EN-US>Service</span></b></p>
+                                                            </td>
+                                                            <td style="BORDER-TOP: rgb(8,172,212) 1pt solid; HEIGHT: 2.7pt; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 767px; BACKGROUND: rgb(8,172,212); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; border-image: none" width=767>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: center; MARGIN: 0cm 0cm 8pt' align=center><b><span lang=EN-US>Description</span></b></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="HEIGHT: 52.35pt; mso-yfti-irow: 1">
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: windowtext; WIDTH: 91px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" width=91>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>FindGroup</span></p>
+                                                            </td>
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 767px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" vAlign=top width=767>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Provide location information for group members</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Group vibration feature</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Pair group devices / Un-pair group devices</span></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="HEIGHT: 52.35pt; mso-yfti-irow: 2">
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: windowtext; WIDTH: 91px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" width=91>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>MySkiPerformance</span></p>
+                                                            </td>
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 767px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" vAlign=top width=767>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Measure ski performance for individuals and provide various statistics (incl. grade)</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Identify starting point (use a button or a specific movement)</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Real time GPS tracking and delivery feature (Or deliver data at the final line to save battery)</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Provide performance grade and statistics </span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Deliver grade and statistics to smart phone or digital sinage</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Consider using gps embedded pole to have better tracking </span></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="HEIGHT: 52.35pt; mso-yfti-irow: 3">
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: windowtext; WIDTH: 91px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" width=91>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>KidsSkiCamp</span></p>
+                                                            </td>
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 767px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" vAlign=top width=767>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Provide a tracking and location service to ski camp students and teacher</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Location service to parents and teacher</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l2 level1 lfo3; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Tracking service to teacher with various information including speed, the number of turns</span></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="HEIGHT: 52.35pt; mso-yfti-irow: 4">
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: windowtext; WIDTH: 91px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" width=91>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>ResortCam</span></p>
+                                                            </td>
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 52.35pt; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 767px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" vAlign=top width=767>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo4; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Replace legacy ski resort cam to IoT based cam</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo4; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Provide web and mobile version interfaces</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo4; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Consider existing systems such as streaming server and license for playing</span></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="HEIGHT: 0.9pt; mso-yfti-irow: 5; mso-yfti-lastrow: yes">
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 0.9pt; BORDER-RIGHT: windowtext; WIDTH: 91px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" width=91>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>WattageMeter</span></p>
+                                                            </td>
+                                                            <td style="BORDER-TOP: windowtext; HEIGHT: 0.9pt; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 767px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" vAlign=top width=767>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo5; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Measure energy usage for snow canon and provide a dashboard</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo5; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Use wattagemeter clip from SDS + LoRa module from SKT to transfer measured data</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo5; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Energy usage for each snow canon and total usage including various statistics</span></p>
+                                                                <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo5; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Consider existing system architecture and electricity design</span></p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table></span></span></span></span></font></span></span></span></span></p>
+        
+        <br><br><br>
+
+
+
+
+        <!-- ************************* [1] SNOW CANNON LOCATION  ************************************* -->
+        <div>
+            <p id="subtitle_1" class="subtitle">[1] Monitoring snow cannon power consumption</p>
+            <br>
+            <table width=600 align="center">
+            <tr>
+                <td><img src="MonPower.jpg"/ width=470></td>
+                <td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td align=center>
+                    <div class="contents-left"> 
+                        <ul><li>Measure energy usage for snow canon and provide a dashboard</li>
+                            <li>Use wattagemeter clip from SDS + LoRa module from Solu-M to transfer measured data</li>
+                            <li>Energy usage for each snow canon and total usage including various statistics</li>
+                            <li>Consider existing system architecture and electricity design</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <input width = "500" type="button" id="PowerButton" value="Update Power Consumption Status!"><br><br>
+                    <table border=1 width=500 align = center>
+                        <tr><th>Name</th><th>Installed Location</th><th>Power Consumption</th><th>Unit</th>
+                        <tr><td>SN_CM02.SN-CM0200M0001</td>
+                            <td><div id="installed_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="snowcannon_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td>W (Watt)</td></tr>
+                        <tr><td>SN_CM02.SN_CM02SN0023</td>
+                            <td><div id="installed_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="snowcannon_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td>W (Watt)</td></tr>
+                    </table>
+                    <br>
+                    <div class="contents-left"> Last updated: <span id="time_1">&nbsp;</span></div>
+                    <br>
+
+                </td>
+            </tr>
+            </table>
+        </div>
+        <br><br><br>
+        <!-- ************************* [2] SNOW CANNON LOCATION  ************************************* -->
+        <div>
+            <p id="subtitle_2" class="subtitle">[2] Tracking events from rescue team</p>
+            <br>
+            <table align="center">
+            <tr>
+                <td align=center>
+                    <div class="contents-left"> 
+                        <ul><li>Send emergency signal to notify centrol office using smart button or wearable band</li>
+                            <li>Track the position of rescue team</li>
+                            <li>Transfer emergency level </li>
+                            <li>Check the device's remaining battery</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <input width = "400" type="button" id="RescueButton" value="Track accidents from the Rescue Team"><br><br>
+                    <table border=1 width=700 align = center>
+                        <tr><th>Name(band owner)</th><th>Risk level</th><th>Button status</th><th>longitude</th><th>lattitude</th><th>Battery</th>
+                        <tr><td><div id="owner_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="status_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="button_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="long_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="latt_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="batt_1">&nbsp;&nbsp;&nbsp;</div></td>
+                        <tr><td><div id="owner_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="status_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="button_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="long_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="latt_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="batt_2">&nbsp;&nbsp;&nbsp;</div></td>
+                        <tr></tr>
+                    </table>
+                    <br>
+                    <div class="contents-left"> Last updated: <span id="time_2">&nbsp;</span></div>
+                    <br><br>
+
+                </td>
+                <td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><img src="band.png"/ width=250></td>
+                <td><img src="Rescue.png"/></td>
+                
+            </tr>
+            </table>
+        </div>
+        <br><br><br>
+        <!-- ************************* [3] Alarm to Resort Manager ************************************* -->
+        <div>
+            <p id="subtitle_3" class="subtitle">[3] Alarm call to warn issues</p>
+            <br>
+            <table width=600 align="center" height=200>
+            <tr>
+                <td><img src="manager.jpg"/ width=500></td>
+                <td width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td align=center>
+                    <div class="contents-left"> 
+                        <ul><li>Inform resort managers of urgent issues</li>
+                            <li>Track the position of resort managers</li>
+                            <li>Check the device's remaining battery</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <input width = "400" type="button" id="mngrBtn" value="Check the status of managers"><br><br>
+                    <table border=1 width=500 align = center>
+                        <tr><th>Manager Name</th><th>Call</th><th>status</th><th>callSign</th><th>Call Status</th>
+                        <tr><td><div id="mngr_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td align=center><input type="Button" value="call" id="callBtn1"></td>
+                            <td><div id="mstatus_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="callsign_1">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="rtnCode_1">&nbsp;&nbsp;&nbsp;</div></td>
+                        <tr><td><div id="mngr_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td align=center><input type="Button" value="call" id="callBtn2"></td>
+                            <td><div id="mstatus_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="callsign_2">&nbsp;&nbsp;&nbsp;</div></td>
+                            <td><div id="rtnCode_2">&nbsp;&nbsp;&nbsp;</div></td>
+                    </table>
+                    <br>
+                    <div class="contents-left"> Last updated: <span id="time_3">&nbsp;</span></div>
+                    <br>
+
+                </td>
+                
+            </tr>
+            </table>
+        </div>
+        <br><br><br><br><br>
+        <div>
+            <p id="subtitle_0" class="subtitle">▶ Usecases for PyeongChang 2018 ICT  </p>
+            <br>
+
+            <table class=MsoNormalTable style="WIDTH: 861px; BORDER-COLLAPSE: collapse; mso-yfti-tbllook: 1056; mso-padding-alt: 0cm 0cm 0cm 0cm" cellSpacing=0 cellPadding=0 width=861 border=0>
+                <tbody>
+                    <tr style="HEIGHT: 30.95pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+                        <td style="BORDER-TOP: rgb(8,172,212) 1pt solid; HEIGHT: 23px; BORDER-RIGHT: windowtext; WIDTH: 125px; BACKGROUND: rgb(8,172,212); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; border-image: none" height=23 width=125>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><b><span lang=EN-US>Service</span></b></p>
+                        </td>
+                        <td style="BORDER-TOP: rgb(8,172,212) 1pt solid; HEIGHT: 23px; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 736px; BACKGROUND: rgb(8,172,212); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; border-image: none" height=23 width=736>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><b><span lang=EN-US>Description</span></b></p>
+                        </td>
+                    </tr>
+                    <tr style="HEIGHT: 59.6pt; mso-yfti-irow: 1">
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 22px; BORDER-RIGHT: windowtext; WIDTH: 125px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=22 width=125>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>AR street guide</span></p>
+                        </td>
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 22px; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 736px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=22 vAlign=top width=736>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Provide a best street route information based on AR and GPS technologies</span></p>
+                        </td>
+                    </tr>
+                    <tr style="HEIGHT: 59.6pt; mso-yfti-irow: 2">
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 5px; BORDER-RIGHT: windowtext; WIDTH: 125px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=5 width=125>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>Smart life</span></p>
+                        </td>
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 5px; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 736px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=5 vAlign=top width=736>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l2 level1 lfo2; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Help people to track their location for security and provide parking information using smart street lights</span></p>
+                        </td>
+                    </tr>
+                    <tr style="HEIGHT: 59.6pt; mso-yfti-irow: 3">
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 25px; BORDER-RIGHT: windowtext; WIDTH: 125px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=25 width=125>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>Smart shopping</span></p>
+                        </td>
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 25px; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 736px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=25 vAlign=top width=736>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo3; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Develop a shopping reference zone to attract tourists</span></p>
+                        </td>
+                    </tr>
+                    <tr style="HEIGHT: 59.6pt; mso-yfti-irow: 4">
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 37px; BORDER-RIGHT: windowtext; WIDTH: 125px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=37 width=125>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>Smart tourist</span></p>
+                        </td>
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 37px; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 736px; BACKGROUND: white; BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=37 vAlign=top width=736>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo4; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Provide various recommendations to tourists based on AR and beacon technologies</span></p>
+                        </td>
+                    </tr>
+                    <tr style="HEIGHT: 59.6pt; mso-yfti-irow: 5; mso-yfti-lastrow: yes">
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 28px; BORDER-RIGHT: windowtext; WIDTH: 125px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: rgb(8,172,212) 1pt solid; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=28 width=125>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt'><span lang=EN-US>Digital Supporters</span></p>
+                        </td>
+                        <td style="BORDER-TOP: windowtext; HEIGHT: 28px; BORDER-RIGHT: rgb(8,172,212) 1pt solid; WIDTH: 736px; BACKGROUND: rgb(231,241,247); BORDER-BOTTOM: rgb(8,172,212) 1pt solid; PADDING-BOTTOM: 3.6pt; PADDING-TOP: 3.6pt; PADDING-LEFT: 7.2pt; BORDER-LEFT: windowtext; PADDING-RIGHT: 7.2pt; mso-border-top-alt: solid #08ACD4 1.0pt" height=28 vAlign=top width=736>
+                            <p style='FONT-SIZE: 10pt; TEXT-DECORATION: ; FONT-FAMILY: "맑은 고딕"; TEXT-ALIGN: justify; MARGIN: 0cm 0cm 8pt 36pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo5; tab-stops: list 36.0pt'><span lang=EN-US style='FONT-FAMILY: "Arial",sans-serif; mso-fareast-font-family: Arial'><span style="mso-list: Ignore">-<span style='FONT-SIZE: 7pt; FONT-FAMILY: "Times New Roman"; FONT-VARIANT: normal; FONT-STYLE: normal; LINE-HEIGHT: normal; font-size-adjust: none; font-stretch: normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang=EN-US>Develop digital signage to allow tourists to share their messages</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table></p>
+        </div>
+        <br><br><br>
+
+        <div id="tail" class="lead text-center">
+            <img src="wise-iot-logo.png"/>
+            <br><br><br>
+            <img src="sds.png"/>
+            <br><br><br><br><br>
+            <img src="interconnect.jpg"/>
+        </div>
+        <br><br><br>
+
+        <br>
+        <!--
+        <input type="button" value="Track the position of manager!"><br><br>
+        <table border=1 width=300>
+            <tr><td>Andy</td><td>...</td><td>...</td></tr>
+            <tr><td>Leon</td><td>...</td><td>...</td></tr>
+            <tr><td>Bryan</td><td>...</td><td>...</td></tr>
+            <tr><td>Julia</td><td>...</td><td>...</td></tr>
+        </table>
+
+        -->
+
+        <!-- div id="nameInput" class="input-group-lg center-block helloInput" -->
+            <!--
+            <p class="lead">What is your name?</p>
+            <input id="user_name" type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1" value="" />
+            <br>
+            -->
+            <!-- input type="button" id="testBtn" value="test" -->
+        <!--  /div -->
+
+        <p id="databaseNames" class="lead text-center"></p>
+        <p id="testResult" class="lead text-center"></p>
+    </div>
+
+    <!-- ========================================================================================================= -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+    	//Submit data when enter key is pressed
+        $('#user_name').keydown(function(e) {
+        	var name = $('#user_name').val();
+            if (e.which == 13 && name.length > 0) { //catch Enter key
+            	//POST request to API to create a new visitor entry in the database
+                $.ajax({
+				  method: "POST",
+				  url: "./api/visitors",
+				  contentType: "application/json",
+				  data: JSON.stringify({name: name })
+				})
+                .done(function(data) {
+                    $('#response').html(data);
+                    //$('#nameInput').hide();
+                    //getNames();
+                });
+            }
+        });
+
+        //-------------------------------------------------------------------
+        $('#testBtn').click(function(e) {
+                $.ajax({
+                  method: "GET",
+                  url: "./api/apiCallTest",
+                  contentType: "application/json",
+                  //data: JSON.stringify({name: name })
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    alert(data);
+                    console.log(data);
+                    $('#testResult').html(data);
+                });
+        });
+        
+        //-------------------------------------------------------------------
+        //------------  Snow Cannon Attribute   -----------------------------
+        //-------------------------------------------------------------------
+        $('#PowerButton').click(function(e) {
+                $.ajax({
+                  method: "GET",
+                  url: "./api/attrsCurrent",
+                  contentType: "application/json",
+                  data: {device: "SN_CM02.SN-CM0200M0001" }
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var installed = result.attrs[0].attrValues[0].attrValue;
+                    var power = result.attrs[1].attrValues[0].attrValue;
+                    console.log(power);
+                    $('#installed_1').html(installed);
+                    $('#snowcannon_1').html(power);
+                });
+                $.ajax({
+                  method: "GET",
+                  url: "./api/attrsCurrent",
+                  contentType: "application/json",
+                  data: {device: "SN_CM02.SN_CM02SN0023" }
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var installed = result.attrs[0].attrValues[0].attrValue;
+                    var power = result.attrs[1].attrValues[0].attrValue;
+                    console.log(power);
+                    $('#installed_2').html(installed);
+                    $('#snowcannon_2').html(power);
+                });
+                $('#time_1').html(getTimeStamp());
+
+        });
+
+        //-------------------------------------------------------------------
+        //------------  Rescue Attribute   -----------------------------
+        //-------------------------------------------------------------------
+        $('#RescueButton').click(function(e) {
+                $.ajax({
+                  method: "GET",
+                  url: "./api/attrsCurrent",
+                  contentType: "application/json",
+                  data: {device: "BEEPER_TYPE2.Beeper2_005" }
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var owner = result.attrs[3].attrValues[0].attrValue;
+                    var risk_level = result.attrs[1].attrValues[0].attrValue;
+                    var alarButton = result.attrs[5].attrValues[0].attrValue;
+                    var longitude = result.attrs[4].attrValues[0].attrValue;
+                    var lattitude = result.attrs[2].attrValues[0].attrValue;
+                    var battery = result.attrs[0].attrValues[0].attrValue;
+                    $('#owner_1').html(owner);
+                    $('#status_1').html(risk_level);
+                    $('#button_1').html(alarButton);
+                    $('#long_1').html(longitude);
+                    $('#latt_1').html(lattitude);
+                    $('#batt_1').html(battery + "%");
+                });
+                $.ajax({
+                  method: "GET",
+                  url: "./api/attrsCurrent",
+                  contentType: "application/json",
+                  data: {device: "BEEPER_TYPE2.Beeper2_011" }
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var owner = result.attrs[3].attrValues[0].attrValue;
+                    var risk_level = result.attrs[1].attrValues[0].attrValue;
+                    var alarButton = result.attrs[5].attrValues[0].attrValue;
+                    var longitude = result.attrs[4].attrValues[0].attrValue;
+                    var lattitude = result.attrs[2].attrValues[0].attrValue;
+                    var battery = result.attrs[0].attrValues[0].attrValue;
+                    $('#owner_2').html(owner);
+                    $('#status_2').html(risk_level);
+                    $('#button_2').html(alarButton);
+                    $('#long_2').html(longitude);
+                    $('#latt_2').html(lattitude);
+                    $('#batt_2').html(battery + "%");
+                });
+                $('#time_2').html(getTimeStamp());
+
+        });
+        //-------------------------------------------------------------------
+        //------------  [3-1] Manager Attribute   -----------------------------
+        //-------------------------------------------------------------------
+        $('#mngrBtn').click(function(e) {
+                $.ajax({
+                  method: "GET",
+                  url: "./api/attrsCurrent",
+                  contentType: "application/json",
+                  data: {device: "RM-BM001.RM-BM001SN0001" }
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var owner = result.attrs[4].attrValues[0].attrValue;
+                    var status = result.attrs[0].attrValues[0].attrValue;
+                    var callSign = result.attrs[2].attrValues[0].attrValue;
+                    var battery = result.attrs[1].attrValues[0].attrValue;
+                    $('#mngr_1').html(owner);
+                    $('#mstatus_1').html(status);
+                    $('#callsign_1').html(callSign);
+                    $('#rtnCode_1').html("");
+                });
+                $.ajax({
+                  method: "GET",
+                  url: "./api/attrsCurrent",
+                  contentType: "application/json",
+                  data: {device: "RM-BM001.RM-BM001SN001-M" }
+                })
+                .done(function(data){
+                    //$('#response').html(data);
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var owner = result.attrs[4].attrValues[0].attrValue;
+                    var status = result.attrs[3].attrValues[0].attrValue;
+                    var callSign = result.attrs[1].attrValues[0].attrValue;
+                    var battery = result.attrs[0].attrValues[0].attrValue;
+                    $('#mngr_2').html(owner);
+                    $('#mstatus_2').html(status);
+                    $('#callsign_2').html(callSign);
+                    $('#rtnCode_2').html("");
+                });
+                $('#time_3').html(getTimeStamp());
+
+        });
+        //-------------------------------------------------------------------
+        //------------  [3-2] Alert Manager  -----------------------------
+        //-------------------------------------------------------------------
+        $('#callBtn1').click(function(e) {
+                $.ajax({
+                  method: "GET",
+                  url: "./api/callButton",
+                  contentType: "application/json",
+                  data: {device: "RM-BM001.RM-BM001SN0001" }
+                })
+                .done(function(data){
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var rtnCode = result.messageStatusMessage;
+                    //$('#rtnCode_1').html(rtnCode);
+                    $('#rtnCode_1').html('SENT');
+                });
+                $('#time_3').html(getTimeStamp());
+
+        });
+        $('#callBtn2').click(function(e) {
+                $.ajax({
+                  method: "GET",
+                  url: "./api/callButton",
+                  contentType: "application/json",
+                  data: {device: "RM-BM001.RM-BM001SN001-M" }
+                })
+                .done(function(data){
+                    console.log(data);
+                    var result = JSON.parse(data);
+                    var rtnCode = result.messageStatusMessage;
+                    //$('#rtnCode_2').html(rtnCode);
+                    $('#rtnCode_2').html('SENT');
+                });
+                $('#time_3').html(getTimeStamp());
+
+        });
+        function getTimeStamp() {
+          var d = new Date();
+          var s =
+            leadingZeros(d.getFullYear(), 4) + '-' +
+            leadingZeros(d.getMonth() + 1, 2) + '-' +
+            leadingZeros(d.getDate(), 2) + ' ' +
+
+            leadingZeros(d.getHours(), 2) + ':' +
+            leadingZeros(d.getMinutes(), 2) + ':' +
+            leadingZeros(d.getSeconds(), 2);
+
+          return s;
+        }
+        function leadingZeros(n, digits) {
+          var zero = '';
+          n = n.toString();
+
+          if (n.length < digits) {
+            for (i = 0; i < digits - n.length; i++)
+              zero += '0';
+          }
+          return zero + n;
+        }
+
+        //-------------------------------------------------------------------
+        //Retreive all the visitors from the database
+        function getNames(){
+          $.get("./api/visitors")
+              .done(function(data) {
+                  if(data.length > 0) {
+                    $('#databaseNames').html("Database contents: " + JSON.stringify(data));
+                  }
+              });
+        }
+
+          //Call getNames on page load.
+          getNames();
+
+
+    </script>
+</body>
+
+</html>
